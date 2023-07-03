@@ -24,38 +24,22 @@ class ManageCustomersDashBoard extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          TextButton(
-            onPressed: () {},
-            child: const Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_ios,
-                  size: 12,
-                  color: AppColors.subTitleColor,
-                ),
-                Text(
-                  'Back',
-                  style: TextStyle(color: AppColors.subTitleColor),
-                ),
-              ],
-            ),
-          ),
+          const BackButton(),
           const DashBoardContainerHeader(),
           const ContainerBodyListViewItem(
-              widget: Text(''),
-              city: AppStrings.pincodeCity,
-              date: AppStrings.registerdOn,
-              days: '',
-              id: '',
-              name: AppStrings.nameId,
-              pincode: '',
-              index: -1,
-              titleColor: AppColors.darkGrey ,
-              icon: Text(''),
-              ),
+            widget: Text(''),
+            city: AppStrings.pincodeCity,
+            date: AppStrings.registerdOn,
+            days: '',
+            id: '',
+            name: AppStrings.nameId,
+            pincode: '',
+            index: -1,
+            titleColor: AppColors.darkGrey,
+            icon: Text(''),
+          ),
           Expanded(
             child: ListView.builder(
-
               itemCount: 10,
               shrinkWrap: true,
               primary: false,

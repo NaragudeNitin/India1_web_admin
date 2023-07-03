@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:india1_web_ui/screens/manage_customers/manage_customer_detail_screen.dart';
+import 'package:india1_web_ui/views/manage_banners/banners/edit_banner_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:const ManageCustomerDetailsScreen() ,
+      // home: const ManageCustomersMainScreen(),
+      home: const EditBannerScreen(),
+      // home: const AddNotificationPage(),
     );
   }
 }
-

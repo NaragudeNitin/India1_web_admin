@@ -127,24 +127,31 @@ class _ManageCustomersDetailsState extends State<ManageCustomersDetails>
                 const SizedBox(
                   height: 20,
                 ),
-                if(Responsive.isMobile(context))IntrinsicHeight(
-                  child: Column(
-                    children: [
-                      const ProfileInfoHeaderRow(flex: 1,),const SizedBox(height: 20,),
-                      suspendButton(context, fullheight, fullwidth)
-                    ],
+                if (Responsive.isMobile(context))
+                  IntrinsicHeight(
+                    child: Column(
+                      children: [
+                        const ProfileInfoHeaderRow(
+                          flex: 1,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        suspendButton(context, fullheight, fullwidth)
+                      ],
+                    ),
                   ),
-                ),
-
-                if(Responsive.isDesktop(context) || Responsive.isTablet(context)) IntrinsicHeight(
-                  child: Row(
-                    children: [
-                      const ProfileInfoHeaderRow(),
-                      const Spacer(),
-                      suspendButton(context, fullheight, fullwidth)
-                    ],
+                if (Responsive.isDesktop(context) ||
+                    Responsive.isTablet(context))
+                  IntrinsicHeight(
+                    child: Row(
+                      children: [
+                        const ProfileInfoHeaderRow(),
+                        const Spacer(),
+                        suspendButton(context, fullheight, fullwidth)
+                      ],
+                    ),
                   ),
-                ),
               ],
             ),
           ),
@@ -194,6 +201,7 @@ class _ManageCustomersDetailsState extends State<ManageCustomersDetails>
   Widget suspendButton(
       BuildContext context, double fullheight, double fullwidth) {
     return InkWell(
+      // onHover: ,
       onTap: () => {
         log('this suspend button'),
         showDialog(
@@ -208,8 +216,10 @@ class _ManageCustomersDetailsState extends State<ManageCustomersDetails>
         width: 100,
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         decoration: BoxDecoration(
-          border: Border.all(color: AppColors.lightBlue),
-          color: AppColors.white,
+          border: Border.all(
+            color: AppColors.lightBlue,
+          ),
+          color: AppColors.whiteColor,
         ),
         child: const Center(
           child: Text(
@@ -225,13 +235,14 @@ class _ManageCustomersDetailsState extends State<ManageCustomersDetails>
 
 class ProfileInfoHeaderRow extends StatelessWidget {
   const ProfileInfoHeaderRow({
-    super.key, this.flex,
+    super.key,
+    this.flex,
   });
   final int? flex;
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         RowItemWidget(
           title: AppStrings.customerId,
@@ -245,15 +256,16 @@ class ProfileInfoHeaderRow extends StatelessWidget {
           width: 10,
         ),
         const SizedBox(
-            height: 40,
-            child: VerticalDivider(
-              width: 2,
-              color: AppColors.darkGrey,
-            ),),
+          height: 40,
+          child: VerticalDivider(
+            width: 2,
+            color: AppColors.darkGrey,
+          ),
+        ),
         const SizedBox(
           width: 10,
         ),
-         RowItemWidget(
+        RowItemWidget(
           title: AppStrings.cardNumber,
           titleColor: AppColors.subTitleColor,
           subtitle: '112433 XXX SX',
@@ -273,7 +285,7 @@ class ProfileInfoHeaderRow extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-         RowItemWidget(
+        RowItemWidget(
           title: AppStrings.usingMode,
           titleColor: AppColors.subTitleColor,
           subtitle: AppStrings.appVers,
@@ -307,8 +319,8 @@ class SuspendDialogBox1 extends StatelessWidget {
             padding: const EdgeInsets.all(24),
             height: fullheight * 0.75,
             width: fullwidth * 0.75,
-            color: AppColors.white,
-            child:  Column(
+            color: AppColors.whiteColor,
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -326,50 +338,126 @@ class SuspendDialogBox1 extends StatelessWidget {
                   flex: 0,
                   headingText: AppStrings.chooseAReasonforSus,
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 DropdownMenu(
                   width: fullwidth * 0.75 * 0.80,
                   hintText: AppStrings.selectoneOfReas,
-                  dropdownMenuEntries: const [],),
-
-                const SizedBox(height: 40,),
+                  dropdownMenuEntries: const [],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
                 const HeadingText(
-                  flex: 0,
-                  headingText: AppStrings.additionalComments),
-                  const SizedBox(height: 20,),
-                  SizedBox(
-                    width: fullwidth * 0.75 * 0.80,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: AppColors.subTitleColor)
-                        ),
+                    flex: 0, headingText: AppStrings.additionalComments),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  width: fullwidth * 0.75 * 0.80,
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: AppColors.subTitleColor)),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () async {
+                    Navigator.pop(context);
+                    showDialog(
+                      context: context,
+                      builder: (context) => Stack(
+                        children: [
+                          AlertDialog(
+                            title: Container(
+                              color: Colors.black,
+                              padding: const EdgeInsets.all(24),
+                              height: fullheight * 0.35,
+                              width: fullwidth * 0.45,
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    AppStrings.pleaseNote,
+                                    style: TextStyle(
+                                      color: AppColors.primaryTextColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
+                                  const Text(
+                                    AppStrings.onceSuspended,
+                                    style: TextStyle(
+                                      color: AppColors.primaryTextColor,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
+                                  AnimatedContainer(
+                                    color: AppColors.lightBlue,
+                                    duration: const Duration(milliseconds: 500),
+                                    child: Center(
+                                      child: TextButton(
+                                          onPressed: () {},
+                                          child:
+                                              const Text(AppStrings.confirm)),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            right: fullwidth * 0.10,
+                            top: fullheight * 0.10,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black45,
+                              radius: 30,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Icon(
+                                  Icons.cancel_outlined,
+                                  color: Colors.grey.shade200,
+                                  fill: 1,
+                                  size: 60,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 40,
+                    width: fullwidth * 0.75 * 0.60,
+                    decoration: BoxDecoration(
+                      color: AppColors.lightBlue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        AppStrings.continueToSus,
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: AppColors.whiteColor,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
-
-                  const SizedBox(height: 20,),
-
-                  GestureDetector(
-                    onTap: () {
-                      
-                    },
-                    child: Container(
-                      height: 40,
-                      width: fullwidth * 0.75 * 0.60,
-                      
-                      decoration: BoxDecoration(
-                        color: AppColors.lightBlue,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Center(
-                        child:  Text(AppStrings.continueToSus, style: TextStyle(
-                      fontSize: 14, color: AppColors.white,
-                      fontWeight: FontWeight.w600
-                    ),),
-                      ),
-                    ),
-                  ),
+                ),
               ],
             ),
           ),
@@ -377,7 +465,7 @@ class SuspendDialogBox1 extends StatelessWidget {
         Positioned(
           right: fullwidth * 0.10,
           top: fullheight * 0.10,
-          child:  CircleAvatar(
+          child: CircleAvatar(
             backgroundColor: Colors.black45,
             radius: 30,
             child: GestureDetector(
@@ -386,7 +474,7 @@ class SuspendDialogBox1 extends StatelessWidget {
               },
               child: const Icon(
                 Icons.cancel,
-                color: AppColors.white,
+                color: AppColors.whiteColor,
                 fill: 1,
                 size: 60,
               ),

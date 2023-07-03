@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:india1_web_ui/screens/manage_customers/components/sort_popup.dart';
+import 'package:india1_web_ui/views/manage_customers/components/sort_popup.dart';
 
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_images.dart';
@@ -68,9 +68,9 @@ class DashBoardContainerHeader extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 showDialog(
-                  context: context, builder: (context) =>
-                   const SortPopup()
-                ,);
+                  context: context,
+                  builder: (context) => const SortPopup(),
+                );
               },
               child: SvgPicture.asset(
                 AppImages.sortIcon,
@@ -83,4 +83,3 @@ class DashBoardContainerHeader extends StatelessWidget {
     );
   }
 }
-

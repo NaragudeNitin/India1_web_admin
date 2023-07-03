@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:india1_web_ui/constants/app_colors.dart';
 import 'package:india1_web_ui/constants/app_strings.dart';
-import 'package:india1_web_ui/screens/manage_customers/components/drawer_list_tile.dart';
+import 'package:india1_web_ui/views/manage_customers/components/drawer_list_tile.dart';
 
 import '../constants/app_images.dart';
-import '../screens/manage_customers/components/drawerlist_heading_text.dart';
+import '../views/manage_customers/components/drawerlist_heading_text.dart';
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({
     super.key,
   });
- 
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      
       child: Container(
         color: AppColors.primaryColor,
         child: SingleChildScrollView(

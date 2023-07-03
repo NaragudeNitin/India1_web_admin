@@ -23,11 +23,12 @@ class DrawerListHeadingText extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16),
       child: Text(
         title,
-        style: style ?? TextStyle(
-          color: color ?? AppColors.primaryTextColor,
-          fontWeight: fontWeight ?? FontWeight.w600,
-          fontSize: fontSize ?? 16,
-        ),
+        style: style ??
+            TextStyle(
+              color: color ?? AppColors.primaryTextColor,
+              fontWeight: fontWeight ?? FontWeight.w600,
+              fontSize: fontSize ?? 16,
+            ),
       ),
     );
   }

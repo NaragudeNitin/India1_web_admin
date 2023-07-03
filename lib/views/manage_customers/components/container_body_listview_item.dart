@@ -5,7 +5,7 @@ import '../../../common_widgets/row_item_widget.dart';
 import '../../../constants/app_colors.dart';
 
 class ContainerBodyListViewItem extends StatelessWidget {
-   const ContainerBodyListViewItem({
+  const ContainerBodyListViewItem({
     Key? key,
     this.widget,
     required this.name,
@@ -17,7 +17,8 @@ class ContainerBodyListViewItem extends StatelessWidget {
     this.titleColor,
     this.subTitleColor,
     required this.index,
-    this.icon, this.onTap,
+    this.icon,
+    this.onTap,
   }) : super(key: key);
 
   final Widget? widget;
@@ -70,7 +71,8 @@ class ContainerBodyListViewItem extends StatelessWidget {
                                             shape: BoxShape.circle,
                                             color: AppColors.teal100,
                                             border: Border.all(
-                                                color: AppColors.teal, width: 2),
+                                                color: AppColors.teal,
+                                                width: 2),
                                           ),
                                         ),
                                       ),

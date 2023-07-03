@@ -25,7 +25,7 @@ class SortPopup extends StatelessWidget {
             height: deviceHeight * 0.55,
             width: deviceWidth * 0.8,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-            color: AppColors.white,
+            color: AppColors.whiteColor,
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class SortPopup extends StatelessWidget {
                         child: const Text(
                           AppStrings.applyFilters,
                           style: TextStyle(
-                            color: AppColors.white,
+                            color: AppColors.whiteColor,
                             fontSize: 16,
                           ),
                         ),
@@ -242,8 +242,7 @@ class SortPopup extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const SortingHeaderText(
-                      title: AppStrings.byLocation),
+                  const SortingHeaderText(title: AppStrings.byLocation),
                   const SizedBox(
                     height: 10,
                   ),

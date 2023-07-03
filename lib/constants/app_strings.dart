@@ -1,7 +1,13 @@
+import 'package:flutter/material.dart';
 
+const EdgeInsetsGeometry defaultPadding = EdgeInsets.all(20);
+const EdgeInsetsGeometry padding24 = EdgeInsets.all(24);
+const EdgeInsetsGeometry padding16 = EdgeInsets.all(16);
+const EdgeInsetsGeometry padding18 = EdgeInsets.all(18);
+
+// const fullWidth = MediaQuery.of(context).size.width;
 
 class AppStrings {
-
   // side menu bar
   static const String dashBoard = 'Dashboard';
   static const String overview = 'Overview';
@@ -17,7 +23,7 @@ class AppStrings {
   static const String manageNoti = ' Manage Notifications';
   static const String notifi = 'Notifications';
   static const String manageBanners = "Manage banners";
-  static const String banners = 'Banners'; 
+  static const String banners = 'Banners';
   static const String manageInd1Tm = 'Manage India1 Team';
   static const String ind1Team = 'India1 team';
   static const String assistedMod = 'Assisted Module';
@@ -26,16 +32,17 @@ class AppStrings {
   static const String googleAnalytics = 'Google Analytics';
   static const String loyaltyProgram = 'Loyalty Program';
   static const String loanStatus = 'Loan status';
-  static const String addLink ='Add Link'; 
+  static const String addLink = 'Add Link';
 
   // top bar
   static const String allStates = 'All states';
   static const String allDistrics = ' All districts';
   static const String allTowns = 'All towns';
   static const String allPincodes = 'All picodes';
+  static const String allCategories = 'All categories';
 
   //dashoard screen constants
-  static const String customers= 'Customers';
+  static const String customers = 'Customers';
   static const String nameId = 'Name / ID';
   static const String pincodeCity = 'Pincode / City';
   static const String registerdOn = 'Registerd on';
@@ -47,7 +54,7 @@ class AppStrings {
   static const String days2 = '2 days ago';
 
   static const String searchBy = 'Search by Digital ID / Mobile number';
-  
+
   //popup items
   static const String asdvancefilter = 'Advance Filters';
   static const String applyFilters = 'Apply Filters';
@@ -62,9 +69,10 @@ class AppStrings {
   static const String allVersions = 'All Versions';
   static const String byCustomerEarPoints = 'By Customer earning Points';
   static const String allWays = 'All Ways';
-  static const String byCustomerRedeemingPoints = 'By Customer Redeeming points';
+  static const String byCustomerRedeemingPoints =
+      'By Customer Redeeming points';
   static const String byLocation = 'By Location';
-  
+
   static const String searchResults = 'Search results';
   static const String suspend = 'Suspend';
 
@@ -78,8 +86,8 @@ class AppStrings {
   //tab names
   static const String profileDetails = 'Profile details';
   static const String loyalty = 'Loyalty';
-  // static const String 
-  
+  // static const String
+
   //->personal Details
   static const String personalDetails = 'Personal Details';
   static const String firstName = 'First name';
@@ -90,7 +98,7 @@ class AppStrings {
   static const String dateOfBirth = 'Date of birth';
   static const String gender = 'Gender';
   static const String maritalStatus = 'Marital status';
-  
+
   // ->Rsidential Details
   static const String residentialDetails = 'Residential Details';
   static const String addressLine1 = 'Address line 1';
@@ -100,7 +108,7 @@ class AppStrings {
   static const String state = 'State';
 
   //->Occupation Details
-  static const String occupationDetails = 'Occupation Details'; 
+  static const String occupationDetails = 'Occupation Details';
   static const String employmentType = 'Employment type';
   static const String occupation = 'Occupation';
   static const String monthlyIncome = 'Monthly income';
@@ -114,7 +122,7 @@ class AppStrings {
   static const String accountNumber = 'Account number';
   static const String ifscCode = 'IFSC code';
   static const String accountType = 'Account type';
-  
+
   //-> UPI ID/VPA
   static const String upiIdVpa = 'UPI ID(s) / VPA number(s)';
   static const String upiId = 'UPI ID';
@@ -126,7 +134,8 @@ class AppStrings {
   static const String earned = 'Earned';
   static const String redeemed = 'Redeemed';
   static const String allWaysToEarningPoints = 'All ways of earning points';
-  static const String allWaysOfRedeemingPoints = ' All ways of redeeming points';
+  static const String allWaysOfRedeemingPoints =
+      ' All ways of redeeming points';
   static const String pointsEarned = 'Points earned';
   static const String earnedWay = 'Earned way';
   static const String date = 'Date';
@@ -135,22 +144,23 @@ class AppStrings {
   static const String recharge = 'Recharge';
   static const String cashback = 'Cashback';
   static const String referal = 'Referal';
-  static const String registration = 'Regeistration'; 
+  static const String registration = 'Regeistration';
   static const String atmTranscation = 'ATM transaction';
 
   //loan tab Strings
-  static const String loanTypeAppliedOn = 'Loan type / Applied on';
+  static const String loanType = 'Loan type';
+  static const String appliedOn = 'Applied On';
   static const String loanStatusDateOfAction = 'Loan status / Date of action';
   static const String provider = 'Provider';
   static const String lender = 'Lender';
-  static const String searchByLoanType = 'Search By Loan type / status / provider/ lender';
+  static const String searchByLoanType =
+      'Search By Loan type / status / provider/ lender';
   static const String appliedDateRange = 'Applied date range';
   static const String personalLoan = 'Personal loan';
   static const String approved = 'Approved';
   static const String pending = 'Pending';
   static const String rejected = 'Rejected';
   // static const String
-
 
   //insurance tab Strings
   static const String typePurchasedOn = 'Type / Purchased on';
@@ -164,31 +174,111 @@ class AppStrings {
 
   //Suspending User Screen
   static const String suspendingUser = 'Suspending user';
-  static const String chooseAReasonforSus = 'Choose a reason for suspending the user';
+  static const String chooseAReasonforSus =
+      'Choose a reason for suspending the user';
   static const String selectoneOfReas = 'Select one of the reasons';
   static const String additionalComments = 'Additional comments';
   static const String continueToSus = 'Continue to susupend user';
   static const String pleaseNote = 'Please Note:';
-  static const String onceSuspended = 'Once Suspended, user will not have access to his account';
+  static const String onceSuspended =
+      'Once Suspended, user will not have access to his account';
   static const String confirm = 'Confirm';
   // static const String
 
   //reactivate suspended history
-  static const String reactivateSuspHistory = 'Reactivate / Suspended - History';
+  static const String reactivateSuspHistory =
+      'Reactivate / Suspended - History';
   static const String statusPrevious = 'Status (Previous)';
   static const String statusNew = 'Status (New)';
   static const String reasonForActionTaken = 'Reason for action taken';
   static const String changedByOn = 'Chnaged by / Changed on';
   static const String fraudantActivity = 'Fraudulent activity';
-  static const String basedOnSoAndSo = 'Based on so and so source, acc has been deactivated';
+  static const String basedOnSoAndSo =
+      'Based on so and so source, acc has been deactivated';
   static const String searchByChangedBy = 'Search by Changed by / city';
-  // static const String
-  // static const String
-  // static const String
-  // static const String
-  // static const String
-  // static const String
 
+  //Manage Notifications
+  static const String notifications = 'Notifications';
+  static const String type = 'Type';
+  static const String addNotifications = 'Add notifiactions';
+  static const String earnPointsForRegistrationToApp =
+      'Earn points for registration to app';
+  static const String congratsYouEarnedPoints = 'Congrats! you earned points';
+  static const String youEarned10pts =
+      'You just earned 10 points for registering to app';
 
+  //--> notification Type
+  static const String notificationType =
+      'Notification type - $earnPointsForRegistrationToApp';
+  static const String language = 'Language';
+  static const String english = 'English';
+  static const String subject = 'Subject';
+  static const String description = 'Description';
+  static const String previewBeforeSaving = 'Preview before saving';
+  static const String saveChanges = 'Save Changes';
+  static const String savedSuccessfully = 'Saved successfully';
+  static const String changesHaveBeen =
+      'Changes have been made successfully. The details will start showing up for customers';
+  static const String ok = 'ok';
+  static const String onceDiabled =
+      'Once disabled, customers will stop receiving this notification';
+  static const String continueTodisable = 'Continue to disable';
+  static const String onceEnabled =
+      'Once enabled, customers will start receiving this notification';
+  static const String continueToEnable = 'Continue to enabe';
+  static const String onceDeleted =
+      'Once deleted, this notifiction cannot be retrieved';
+  static const String continueToDelete = 'Continue to delete';
 
+  //--> notification history
+  static const String editNotification = 'Edit Notification';
+  static const String changedField = 'Changed field';
+  static const String valuePrevious = 'Value (previous)';
+  static const String valueNew = 'Value (New)';
+  static const String changedBy = 'Changed by';
+  static const String changedOn = 'Changed on';
+  static const String loanCategory = 'Loan category';
+  static const String sureshKumar = 'Suresh Kumar';
+  static const String productAdmin = 'Product Admin';
+
+  //--> Add notification
+  static const String addNotification = 'Add Notification';
+  static const String pleaseNoteThisNoti =
+      'Please note this notification will neither add anything new nor change the existing functionality';
+  static const String whomToSend = 'Whom to send';
+  static const String uploadUsersWhom =
+      'Upload users to whom you whish to send notifications';
+  static const String downloadTemplete = 'Download templete';
+  static const String addImage = 'Add image';
+  static const String sizeUpto10Kb = 'Size upto 10kb';
+  static const String scheduleNotification = 'Schedule notification';
+  static const String activeFrom = 'Active From';
+  static const String activeUntill = 'Active untill';
+  static const String frequency = 'Frequency';
+  static const String time = 'Time';
+  static const String save = 'Save';
+  static const String delete = 'Delete';
+
+  /////////////// Banners //////////
+  static const String banner1 = 'Banner1';
+  static const String bannerAspectRatio = 'Banner aspect ratio';
+  static const String bannerImage = 'Banner image';
+  static const String addNewBanner = 'Add new banner';
+  static const String bannerName = 'Banner';
+  static const String bannerPlacement = 'Banner placement';
+  static const String uploadBannerdetailsinDiffLang =
+      'Upload banner details in different languages';
+  static const String addLanguage = 'Add language';
+  static const String addTextWithImage = 'Add text with image';
+  static const String upto1kb = 'Upto 1 kb';
+  static const String addredirectionLink = 'Add redirection link';
+  static const String preview = 'Preview';
+  static const String enable = 'Enable';
+  static const String disable = 'Disable';
+  static const String addNewRow = 'Add new row';
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
 }

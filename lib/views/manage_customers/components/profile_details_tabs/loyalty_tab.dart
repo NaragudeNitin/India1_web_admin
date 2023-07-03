@@ -26,73 +26,79 @@ class _LoyaltyTabState extends State<LoyaltyTab> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if(Responsive.isDesktop(context) || Responsive.isTablet(context)) Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      AppStrings.loyaltyPointsSummery,
-                      style: TextStyle(
-                          color: AppColors.subTitleColor,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(width: 30,),
-                    Container(
-                      color: AppColors.white,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 10),
-                      height: 60,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          detailsText(AppStrings.balance, '56'),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          detailsText(AppStrings.earned, '163'),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          detailsText(AppStrings.redeemed, '96'),
-                        ],
+                if (Responsive.isDesktop(context) ||
+                    Responsive.isTablet(context))
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        AppStrings.loyaltyPointsSummery,
+                        style: TextStyle(
+                            color: AppColors.subTitleColor,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600),
                       ),
-                    )
-                  ],
-                ),
-
-                if(Responsive.isMobile(context))Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      AppStrings.loyaltyPointsSummery,
-                      style: TextStyle(
-                          color: AppColors.subTitleColor,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 30,),
-                    Container(
-                      color: AppColors.white,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 10),
-                      height: 60,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          detailsText(AppStrings.balance, '56'),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          detailsText(AppStrings.earned, '163'),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          detailsText(AppStrings.redeemed, '96'),
-                        ],
+                      const SizedBox(
+                        width: 30,
                       ),
-                    )
-                  ],
-                ),
+                      Container(
+                        color: AppColors.whiteColor,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 10),
+                        height: 60,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            detailsText(AppStrings.balance, '56'),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            detailsText(AppStrings.earned, '163'),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            detailsText(AppStrings.redeemed, '96'),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                if (Responsive.isMobile(context))
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        AppStrings.loyaltyPointsSummery,
+                        style: TextStyle(
+                            color: AppColors.subTitleColor,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        color: AppColors.whiteColor,
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 10),
+                        height: 60,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            detailsText(AppStrings.balance, '56'),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            detailsText(AppStrings.earned, '163'),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            detailsText(AppStrings.redeemed, '96'),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 SizedBox(
                   height: 40,
                   width: 40,
@@ -103,27 +109,28 @@ class _LoyaltyTabState extends State<LoyaltyTab> {
             const SizedBox(
               height: 30,
             ),
-            if(Responsive.isMobile(context))
-            Column(
-              children: [
-                const EarnedPointsContainer(),
-                Container(
-                  height: 30,
-                  color: AppColors.secondaryColor,
-                ),
-                const RedeemPointsContainer(),
-              ],
-            ),
-            if(Responsive.isDesktop(context) || Responsive.isTablet(context)) Row(
-              children: [
-                const EarnedPointsContainer(),
-                Container(
-                  width: 30,
-                  color: AppColors.secondaryColor,
-                ),
-                const RedeemPointsContainer(),
-              ],
-            ),
+            if (Responsive.isMobile(context))
+              Column(
+                children: [
+                  const EarnedPointsContainer(),
+                  Container(
+                    height: 30,
+                    color: AppColors.secondaryColor,
+                  ),
+                  const RedeemPointsContainer(),
+                ],
+              ),
+            if (Responsive.isDesktop(context) || Responsive.isTablet(context))
+              Row(
+                children: [
+                  const EarnedPointsContainer(),
+                  Container(
+                    width: 30,
+                    color: AppColors.secondaryColor,
+                  ),
+                  const RedeemPointsContainer(),
+                ],
+              ),
           ],
         ),
       ),
@@ -233,7 +240,7 @@ class RedeemPointsContainer extends StatelessWidget {
     }
 
     return Container(
-      color: AppColors.white,
+      color: AppColors.whiteColor,
       child: Column(
         children: [
           DropdownMenu(
@@ -337,7 +344,7 @@ class EarnedPointsContainer extends StatelessWidget {
     }
 
     return Container(
-      color: AppColors.white,
+      color: AppColors.whiteColor,
       child: Column(
         children: [
           DropdownMenu(

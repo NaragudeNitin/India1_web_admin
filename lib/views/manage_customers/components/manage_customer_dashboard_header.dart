@@ -22,12 +22,10 @@ class ManageCustoDashboardHeader extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-             
               Scaffold.maybeOf(context)!.openDrawer();
               // if (Scaffold.of(context).hasDrawer) {
               //   Scaffold.of(context).closeDrawer();
               // }
-       
             },
             icon: const Icon(Icons.menu),
           ),
@@ -74,17 +72,15 @@ class ManageCustoDashboardHeader extends StatelessWidget {
           )
         ],
       );
-    } else if(Responsive.isMobile(context)){
+    } else if (Responsive.isMobile(context)) {
       return Row(
         children: [
           IconButton(
             onPressed: () {
-             
               Scaffold.maybeOf(context)!.openDrawer();
               // if (Scaffold.of(context).hasDrawer) {
               //   Scaffold.of(context).closeDrawer();
               // }
-       
             },
             icon: const Icon(Icons.menu),
           ),
@@ -205,7 +201,10 @@ class AllStatesDropDownMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownMenu(
-      trailingIcon: const Icon(Icons.unfold_more_rounded, color: AppColors.darkGrey,),
+      trailingIcon: const Icon(
+        Icons.unfold_more_rounded,
+        color: AppColors.darkGrey,
+      ),
       menuHeight: 200,
       // width: MediaQuery.of(context).size.width/8,
       dropdownMenuEntries: [
