@@ -14,6 +14,8 @@ import '../../../constants/app_colors.dart';
 import '../../../constants/app_images.dart';
 import '../../../constants/app_strings.dart';
 import '../../../controllers/menucontroller.dart';
+import 'banners_cmponents/banner_details_tile.dart';
+import 'banners_cmponents/banner_history_pop_up.dart';
 
 class EditBannerScreen extends StatefulWidget {
   const EditBannerScreen({super.key});
@@ -68,7 +70,8 @@ class _EditBannerScreenState extends State<EditBannerScreen> {
                             context: context,
                             builder: (context) => const PopUpAlertDialog(
                               popUpHeading: AppStrings.pleaseNote,
-                              popUpDescription: AppStrings.onceEnabled,
+                              popUpDescription:
+                                  AppStrings.allLanguageBannersEnab,
                               buttonName: AppStrings.continueToEnable,
                             ),
                           );
@@ -95,7 +98,8 @@ class _EditBannerScreenState extends State<EditBannerScreen> {
                             context: context,
                             builder: (context) => const PopUpAlertDialog(
                               popUpHeading: AppStrings.pleaseNote,
-                              popUpDescription: AppStrings.onceDeleted,
+                              popUpDescription:
+                                  AppStrings.allLanguageBannersDeleted,
                               buttonName: AppStrings.continueToDelete,
                             ),
                           );
@@ -104,11 +108,23 @@ class _EditBannerScreenState extends State<EditBannerScreen> {
                       const SizedBox(
                         width: 10,
                       ),
-                      SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
-                          AppImages.pdficon,
+                      GestureDetector(
+                        onTap: () {
+                          log('message');
+                          showDialog(
+                            context: context,
+                            builder: (context) => BannerHistoryPopUpAlert(
+                              fullheight: fullheight,
+                              fullwidth: fullwidth,
+                            ),
+                          );
+                        },
+                        child: SizedBox(
+                          height: 30,
+                          width: 30,
+                          child: SvgPicture.asset(
+                            AppImages.pdficon,
+                          ),
                         ),
                       ),
                     ],
@@ -285,92 +301,6 @@ class _EditBannerScreenState extends State<EditBannerScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class BannerDetailsTile extends StatelessWidget {
-  const BannerDetailsTile({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Switch(
-                value: true,
-                onChanged: (value) {},
-                activeColor: AppColors.teal,
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Expanded(
-              flex: 2,
-              child: DropdownMenu(
-                hintText: ' SelectLanguage',
-                dropdownMenuEntries: [],
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Expanded(
-              flex: 2,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Banner Image',
-                  suffixIcon: Icon(
-                    Icons.file_upload_outlined,
-                    color: AppColors.lightBlue,
-                  ),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Expanded(
-              flex: 2,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'redirection Link',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Expanded(
-              child: Icon(
-                Icons.delete,
-                color: AppColors.lightBlue,
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            const Expanded(
-              child: Icon(
-                Icons.remove_red_eye,
-                color: AppColors.lightBlue,
-              ),
-            ),
-          ],
-        )
-      ],
     );
   }
 }

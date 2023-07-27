@@ -7,6 +7,7 @@ import 'package:india1_web_ui/common_widgets/heading_text.dart';
 import 'package:india1_web_ui/constants/app_colors.dart';
 import 'package:india1_web_ui/constants/app_images.dart';
 import 'package:india1_web_ui/constants/app_strings.dart';
+import 'package:india1_web_ui/views/manage_notifications/notifications/notification_components/notification_history.dart';
 
 import '../../../common_widgets/common_back_button.dart';
 import '../../../common_widgets/common_pop_up_alertbox.dart';
@@ -25,7 +26,7 @@ class _EditNotificationState extends State<EditNotification> {
   @override
   Widget build(BuildContext context) {
     double fullwidth = MediaQuery.of(context).size.width;
-    // double fullheight = MediaQuery.of(context).size.height;
+    double fullheight = MediaQuery.of(context).size.height;
     return Scaffold(
       key: MenuAppController().scaffoldKey,
       drawer: const SideBarMenu(),
@@ -99,11 +100,24 @@ class _EditNotificationState extends State<EditNotification> {
                         const SizedBox(
                           width: 10,
                         ),
-                        SizedBox(
-                          height: 30,
-                          width: 30,
-                          child: SvgPicture.asset(
-                            AppImages.pdficon,
+                        GestureDetector(
+                          onTap: () {
+                            log('message');
+                            showDialog(
+                              context: context,
+                              builder: (context) =>
+                                  NotificationHistoryPopUpAlert(
+                                fullheight: fullheight,
+                                fullwidth: fullwidth,
+                              ),
+                            );
+                          },
+                          child: SizedBox(
+                            height: 30,
+                            width: 30,
+                            child: SvgPicture.asset(
+                              AppImages.pdficon,
+                            ),
                           ),
                         ),
                       ],

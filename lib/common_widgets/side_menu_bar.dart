@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:india1_web_ui/constants/app_colors.dart';
 import 'package:india1_web_ui/constants/app_strings.dart';
+import 'package:india1_web_ui/views/manage_banners/banner_screen.dart';
 import 'package:india1_web_ui/views/manage_customers/components/drawer_list_tile.dart';
+import 'package:india1_web_ui/views/manage_notifications/notifications_screen.dart';
 
 import '../constants/app_images.dart';
+import '../routes/app_routes_confi.dart';
 import '../views/manage_customers/components/drawerlist_heading_text.dart';
 
 class SideBarMenu extends StatelessWidget {
@@ -59,7 +63,15 @@ class SideBarMenu extends StatelessWidget {
               ),
               DrawerListTile(
                 title: AppStrings.custOverview,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BannerScreen(),
+                      ));
+                  // GoRouter.of(context)
+                  //     .pushNamed(AppRouteConstants.manageCustomers);
+                },
               ),
 
               //manage Products
@@ -95,7 +107,15 @@ class SideBarMenu extends StatelessWidget {
               ),
               DrawerListTile(
                 title: AppStrings.notifi,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NotificationsScreen(),
+                      ));
+                  // GoRouter.of(context)
+                  //     .pushNamed(AppRouteConstants.notifications);
+                },
               ),
 
               //manage banners
@@ -107,7 +127,14 @@ class SideBarMenu extends StatelessWidget {
               ),
               DrawerListTile(
                 title: AppStrings.banners,
-                onTap: () {},
+                onTap: () {
+                  // Navigator.push(
+                  //     context,
+                  // MaterialPageRoute(
+                  //   builder: (context) => const BannerScreen(),
+                  // ));
+                  GoRouter.of(context).pushNamed(AppRouteConstants.banners);
+                },
               ),
 
               //manage India1 team

@@ -28,7 +28,8 @@ class DesktopModeDashboardHeader extends StatelessWidget {
           },
           child: SvgPicture.asset(
             AppImages.searchIcon,
-            color: AppColors.darkGrey,
+            colorFilter:
+                const ColorFilter.mode(AppColors.darkGrey, BlendMode.srcIn),
             height: 25,
             width: 25,
           ),

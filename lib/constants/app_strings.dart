@@ -276,6 +276,65 @@ class AppStrings {
   static const String enable = 'Enable';
   static const String disable = 'Disable';
   static const String addNewRow = 'Add new row';
+
+  //-->> Banner Pop Up texts
+  static const String fileSizeCanNot =
+      'File size cannot exceed 1 kb. Please upload again';
+  static const String onceDisabledLanguageBanner =
+      'Once disable language banner will not show up in app for customers';
+  static const String onceEnabledLanguageBanner =
+      'Once enabled Language banner will start showing up in app';
+  static const String onceDeletedLanguageBanner =
+      'Once deleted English banner cannot be retrieved';
+  static const String allLanguageBannersdisa =
+      'All language banner will be disabled. Customers will not see this banner anymore';
+  static const String allLanguageBannersEnab =
+      'All language banner will be enabled. Customers will start seeing this banner ';
+  static const String allLanguageBannersDeleted =
+      'All language banners will be deleted. Once done. they cant be retrieved';
+  static const String editBanner = 'Edit banner';
+  static const String history = 'History';
+  static const String overallAndHeader = 'Overall & header fields';
+  static const String changed = 'Changed';
+  static const String field = 'field';
+  static const String value = 'value';
+  static const String previous = 'Previous';
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
+  // static const String
   // static const String
   // static const String
   // static const String

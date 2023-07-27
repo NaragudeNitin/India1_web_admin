@@ -5,17 +5,17 @@ import 'heading_text.dart';
 class PopUpAlertDialog extends StatelessWidget {
   const PopUpAlertDialog({
     super.key,
-    required this.popUpHeading,
-    required this.popUpDescription,
-    required this.buttonName,
+    this.popUpHeading,
+    this.popUpDescription,
+    this.buttonName,
     this.onPressed,
     this.child,
     this.height,
     this.width,
   });
-  final String popUpHeading;
-  final String popUpDescription;
-  final String buttonName;
+  final String? popUpHeading;
+  final String? popUpDescription;
+  final String? buttonName;
   final void Function()? onPressed;
   final Widget? child;
   final double? height;
@@ -64,9 +64,9 @@ class CommonPopUpContainer extends StatelessWidget {
     required this.buttonName,
     this.onPressed,
   });
-  final String popUpHeading;
-  final String popUpDescription;
-  final String buttonName;
+  final String? popUpHeading;
+  final String? popUpDescription;
+  final String? buttonName;
   final void Function()? onPressed;
 
   @override
@@ -77,7 +77,7 @@ class CommonPopUpContainer extends StatelessWidget {
       child: Column(
         children: [
           HeadingText(
-            headingText: popUpHeading,
+            headingText: popUpHeading ?? '',
             flex: 0,
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -86,7 +86,7 @@ class CommonPopUpContainer extends StatelessWidget {
             height: 20,
           ),
           HeadingText(
-            headingText: popUpDescription,
+            headingText: popUpDescription ?? '',
             flex: 0,
             fontSize: 14,
           ),
@@ -103,7 +103,7 @@ class CommonPopUpContainer extends StatelessWidget {
               ),
             ),
             onPressed: onPressed,
-            child: Text(buttonName),
+            child: Text(buttonName ?? ''),
           ),
         ],
       ),

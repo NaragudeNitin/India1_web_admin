@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:india1_web_ui/constants/app_strings.dart';
 import '../../constants/app_colors.dart';
+import '../../routes/app_routes_confi.dart';
 import 'components/container_body_listview_item.dart';
 import 'components/dashboard_container_header.dart';
 import 'components/manage_customer_dashboard_header.dart';
@@ -19,6 +21,7 @@ class ManageCustomersDashBoard extends StatelessWidget {
       // color: Colors.black,
       padding: const EdgeInsets.all(16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ManageCustoDashboardHeader(value: value),
           const SizedBox(
@@ -44,7 +47,10 @@ class ManageCustomersDashBoard extends StatelessWidget {
               shrinkWrap: true,
               primary: false,
               itemBuilder: (context, index) => ContainerBodyListViewItem(
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context)
+                        .pushNamed(AppRouteConstants.customerDetails);
+                  },
                   name: AppStrings.advithPatil,
                   id: AppStrings.id23900,
                   city: AppStrings.banglore,

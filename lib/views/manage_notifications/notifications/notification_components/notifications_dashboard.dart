@@ -15,6 +15,7 @@ import 'package:india1_web_ui/responsive.dart';
 import 'package:india1_web_ui/views/manage_notifications/notifications/add_notification_page.dart';
 import 'package:india1_web_ui/views/manage_notifications/notifications/edit_notification_screen.dart';
 
+import 'notification_history.dart';
 import 'notification_type_list_tile.dart';
 
 class NotificationsDashBoard extends StatelessWidget {
@@ -51,7 +52,19 @@ class NotificationsDashBoard extends StatelessWidget {
                           SizedBox(
                             height: 40,
                             width: 40,
-                            child: SvgPicture.asset(AppImages.xlxsIcon),
+                            child: GestureDetector(
+                                onTap: () {
+                                  log('message');
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) =>
+                                        NotificationHistoryPopUpAlert(
+                                      fullheight: fullheight,
+                                      fullwidth: fullwidth,
+                                    ),
+                                  );
+                                },
+                                child: SvgPicture.asset(AppImages.xlxsIcon)),
                           ),
                         ],
                       ),
@@ -124,7 +137,19 @@ class NotificationsDashBoard extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         width: 40,
-                        child: SvgPicture.asset(AppImages.xlxsIcon),
+                        child: GestureDetector(
+                            onTap: () {
+                              log('message');
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    NotificationHistoryPopUpAlert(
+                                  fullheight: fullheight,
+                                  fullwidth: fullwidth,
+                                ),
+                              );
+                            },
+                            child: SvgPicture.asset(AppImages.xlxsIcon)),
                       ),
                     ],
                   ),
